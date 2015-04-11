@@ -20,8 +20,10 @@ var app = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ])
+  .constant('FIREBASE_URL', 'https://thinksterfan.firebaseio.com/')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
