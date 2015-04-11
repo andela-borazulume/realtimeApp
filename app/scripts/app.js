@@ -1,5 +1,8 @@
 'use strict';
 
+/* global app:true */
+/* exported app */
+
 /**
  * @ngdoc overview
  * @name thinksterFanApp
@@ -8,7 +11,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('thinksterFanApp', [
     'ngAnimate',
     'ngAria',
@@ -22,8 +25,8 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/posts.html',
+        controller: 'PostsCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
