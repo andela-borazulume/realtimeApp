@@ -30,9 +30,9 @@ var app = angular
         templateUrl: 'views/posts.html',
         controller: 'PostsCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/posts/:postId', {
+        templateUrl: 'views/showPost.html',
+        controller: 'PostViewCtrl'
       })
       .otherwise({
         redirectTo: '/'

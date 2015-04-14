@@ -1,24 +1,14 @@
 'use strict';
 
-app.controller('PostsCtrl', function ($scope, Post) {
-	$scope.posts = [];
+app.controller('PostsCtrl', function ($scope, Post, $location) {
+	$scope.posts = Post.all;
 	$scope.post = {url:'http://', title: '' };
+	
+	$scope.deletePost = function(post){
+		Post.delete(post);
+		};
 
-	$scope.submitPost = function(){
-		$scope.posts.push($scope.post);
-
-		Post.save($scope.post, function(ref){
-			$scope.posts[ref.name] = $scope.post;
-			$scope.post = {url: 'http://', title: ''};
-
-		});
-	};
-
-	$scope.deletePost = function(postId){
-		Post.delete({id: postId}, function(){
-			delete $scope.posts[postId];
-		});
-
-	};
 	
 });
+
+
